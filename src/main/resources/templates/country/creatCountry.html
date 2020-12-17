@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Country</title>
+</head>
+<body>
+<h1>Create Country</h1>
+<p>
+    <a href="/city">City-list</a>
+</p>
+<th:block th:if="${message}">
+    <p style="color: blue" th:text="${message}"></p>
+</th:block>
+<form th:action="@{/creat-country}" th:object="${country}" method="post">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{name}"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Create Country"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
